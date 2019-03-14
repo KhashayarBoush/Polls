@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+{% load static %}
+<link rel = "stylesheet" href = "{% static 'book/style.css' %}">
+
+    {% block title %}
+        <title>
+            Local library
+        </title>
+    {% endblock  %}
+</head>
+
+<body>
+    {% block sdiebar %}
+        <!-- this is block-->
+    {% elock %}
+
+    {% block content%}
+    <!-- this is a commet-->
+
+    {% endblock  %}
+</body>
+</html>

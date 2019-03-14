@@ -1,0 +1,9 @@
+{% if objects %}
+    <ul>
+    {% for question in objects %}
+    	<li><a href="{% url 'poll:detail' question.id %}"> {{ question.text }} </a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}

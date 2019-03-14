@@ -1,0 +1,15 @@
+<h1 style="color: red;"> {{ que.text }} </h1>
+
+{% if error_massage  %}<p> <strong> {{ error_massage }} </strong> </p>{% endif %}
+
+<form action = "{% url 'poll:vots' que.id %}" method = "POST">
+{% csrf_token %}
+
+{% for choice in que.choice_set.all %}
+	<input type="radio" name = "choice" id = "choice{{ forloop.counter }}" value = "{{ choice.id }}" />
+	<label for = "choice{{ forloop.counter }}">{{ choice.text }}</label><br />
+{% endfor %}
+<input type = "submit"  value = "vote" />
+
+
+</form>
